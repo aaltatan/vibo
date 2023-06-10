@@ -1,0 +1,301 @@
+:root {
+  --cyan: #09baf2;
+  --dark-blue: #393357;
+  --section-color: #fafafc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--cyan);
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 100vmax;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+/* Start Components */
+/* --------------------------- */
+.blue-btn,
+.white-btn {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1.5rem;
+  font-weight: 700;
+  box-shadow: 0.5px 0.5px 0.5px white;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  transition: 300ms;
+}
+.blue-btn {
+  width: fit-content;
+  background-color: var(--cyan);
+  color: white;
+  border: 0.5px solid white;
+}
+.white-btn {
+  background-color: white;
+  color: black;
+}
+.white-btn:hover {
+  color: var(--cyan);
+}
+.blue-btn:hover {
+  color: var(--dark-blue);
+}
+/* --------------------------- */
+.scroll-to-top {
+  left: -3rem;
+  bottom: 1rem;
+  width: fit-content;
+  aspect-ratio: 1/1;
+  background-color: var(--cyan);
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0.5px 0.5px 0.5px var(--cyan);
+  cursor: pointer;
+  z-index: 2000;
+  transition: 300ms;
+}
+.scroll-to-top:hover {
+  box-shadow: 0 0 0 white;
+  animation: go-top 300ms infinite alternate;
+}
+@keyframes go-top {
+  to {
+    transform: translateY(-3px);
+  }
+}
+/* End Components */
+
+/* Start Header */
+header {
+  width: 100%;
+  background: #09bcf262;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: 500ms;
+}
+@media (min-width: 992px) {
+  header > nav .x-btn {
+    display: none;
+  }
+}
+header > nav .x-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+header > nav .x-btn span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 4px;
+  border-radius: 100vmax;
+  background-color: white;
+  transition: 300ms;
+}
+header > nav .x-btn span:first-child {
+  top: 33%;
+}
+header > nav .x-btn span:last-child {
+  top: 66%;
+}
+header > nav .x-btn-close span:first-child {
+  margin-top: 0;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+header > nav .x-btn-close span:last-child {
+  margin-top: 0;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+header > nav ul > li a {
+  position: relative;
+}
+header > nav ul > li a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.25rem;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: white;
+  transition: 300ms;
+}
+header > nav ul > li a:hover::before,
+header > nav ul > li a:focus::before {
+  width: var(--data-length);
+}
+/* End Header */
+/* Start Main */
+/* Start Landing */
+.landing {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background-color: #09baf2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23067DA3'/%3E%3Cstop offset='1' stop-color='%2309BAF2'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23055E7A' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23055E7A' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+.landing .container {
+  max-width: 600px;
+}
+/* End Landing */
+/* Start Services */
+.services {
+  background-color: var(--section-color);
+}
+.services .services-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.services .services-container .box {
+  max-width: 250px;
+  cursor: pointer;
+  font-size: clamp(0.5rem, 80%, 1rem);
+}
+@keyframes sc {
+  50% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+.services .services-container .box:hover i {
+  animation: sc 500ms 2 alternate backwards;
+}
+.services .services-container .box i {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--cyan);
+  transition: 300ms;
+}
+@media (min-width: 992px) {
+  .services .services-container .box:first-of-type {
+    top: 0;
+    left: 12%;
+  }
+  .services .services-container .box:nth-of-type(2) {
+    top: 5%;
+    left: 57%;
+  }
+  .services .services-container .box:nth-of-type(3) {
+    top: 51%;
+    left: 0;
+  }
+  .services .services-container .box:last-of-type {
+    top: 56%;
+    left: 43%;
+  }
+}
+@media (max-width: 992px) {
+  .services .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+    gap: 1rem;
+  }
+  .services .services-container .box {
+    position: relative !important;
+  }
+}
+/* End Services */
+/* Start Marketing */
+.marketing #accordionExample .accordion-button {
+  box-shadow: none;
+  background-color: white;
+}
+.marketing #accordionExample .accordion-body {
+  color: white;
+}
+.marketing #accordionExample .accordion-button[aria-expanded="true"] {
+  color: var(--dark-blue);
+}
+.marketing #accordionExample .accordion-button[aria-expanded="true"],
+.marketing #accordionExample .accordion-body {
+  background-color: var(--cyan);
+}
+/* End Marketing */
+/* Start Code */
+.code {
+  background-color: var(--section-color);
+}
+.code ul li i {
+  color: var(--cyan);
+}
+/* End Code */
+/* Start Download */
+.download {
+  background-color: #09baf2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23067DA3'/%3E%3Cstop offset='1' stop-color='%2309BAF2'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23055E7A' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23055E7A' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+.download .links {
+  max-width: 300px;
+}
+.download .float-btn {
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  max-width: 300px;
+  text-decoration: none;
+  font-size: clamp(1rem, 100%, 3rem);
+  color: white;
+  background-color: indianred;
+  cursor: pointer;
+}
+/* End Download */
+/* Start Contact-Us */
+.contact-us span {
+  font-size: clamp(0.5rem, 100%, 1rem);
+}
+.contact-us ul li a {
+  transition: 300ms;
+}
+.contact-us ul li:hover a {
+  color: var(--cyan) !important;
+}
+/* End About-Us */
+/* End Main */
+footer {
+  background-color: var(--dark-blue);
+}
+footer i {
+  font-size: 2rem;
+  transition: 300ms;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+footer i:hover {
+  color: var(--cyan);
+}
